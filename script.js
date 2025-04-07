@@ -1,10 +1,17 @@
 "use strict";
+ 
+
+
+//dynamic aspects of site. thought about multiple pages but kept it simple on one page considering the content is intended to be more localized
+//variables to use later in styling and adding event listeners
 
 const btn = document.getElementById("flat-tire-btn");
 const btn2 = document.getElementById("brakes-btn");
 const btn3 = document.getElementById("chain-btn");
 const btn4 = document.getElementById("send");
 let index = 0;
+
+// array to use with for loop at intervals
 
 const workshopBanner = [
   "WORKSHOPS",
@@ -14,10 +21,12 @@ const workshopBanner = [
   "Come and learn while having Fun!",
 ];
 
+ // event listeners make my buttons work. added to scroll to different area on the site
+
 btn.addEventListener("click", function () {
   const targetElement = document.getElementById("flat-tire");
 
- 
+
   targetElement.scrollIntoView({ behavior: "smooth" });
 });
 
@@ -37,6 +46,8 @@ setInterval(() => {
   document.getElementById("workshops").textContent = workshopBanner[index];
   index = (index + 1) % workshopBanner.length;
 }, 1500);
+
+// my constructor function so i can later add or remove bicycles as needed either using pop and push or shift and unshift. since i am not getting information externally through an api this seemed the best approach
 
 class Bike {
   constructor(style, brand, condition, price) {
@@ -58,6 +69,8 @@ const bike = [
   new Bike("Mountain bike", "Scott", "Great", "$175.00 or Trade"),
   new Bike("Road bike", "no name", "frame only", "Free"),
 ];
+
+// up to this point i wrote the code with the exception of some ai help on syntax for the interval. from here down is copied from a lecture with the acception of styling.
 
 function renderBikes(bikeArray) {
   const bikeContainer = document.getElementById("sell-trade");
