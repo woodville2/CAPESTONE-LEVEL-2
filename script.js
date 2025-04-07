@@ -1,6 +1,7 @@
 "use strict";
 
 const btn = document.getElementById("flat-tire-btn");
+
 const btn2 = document.getElementById("brakes-btn");
 const btn3 = document.getElementById("chain-btn");
 const btn4 = document.getElementById("send");
@@ -176,4 +177,3 @@ btn4.addEventListener("click", () => {
     addtoStorage("user", message);
   }
 });
-
