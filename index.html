@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bike Maintenance</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header
+      class="flex flex-col md:flex-row justify-center bg-yellow-600 text-white text-center gap-10 mt-15 p-4 "
+    >
+      <h1 class="mt-2 ml-20">Serving East Baton Rouge Parish</h1>
+      <h2 class="mt-6 text-black text-3xl text-bold">
+        Neighborhood Bike Fix: Repairs Tips and Maintenance
+      </h2>
+
+      <div class="flex justify-end p-4">
+        <nav role="navigation" aria-label="Main Navigation">
+          <ul id="nav-bar">
+            <li class="font-bold font-lg mt-3">
+              <a href="#tracker"> Maintenance Tracker </a>
+            </li>
+            <li class="font-bold font-lg mt-3">
+              <a href="#workshops"> Workshops</a>
+            </li>
+            <li class="font-bold font-lg mt-3">
+              <a href="#sell-trade">Gently Used Sell and Trade</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="flex justify-center">
+        <!--card section -->
+        <!--card 1-->
+        <div class="flex justify-center mt-40 mb-30" id="maintenance-card">
+          <div class="w-45 h-full border border-black rounded-lg">
+            <div class="card-body p-4 mt-5">
+              <h3 class="card-title font-bold">Maintenance Tracking</h3>
+              <p>Keeping your wheels rolling, with scheduled maintenance</p>
+              <div class="card-actions justify-end mt-5 mb-4"></div>
+            </div>
+          </div>
+
+          <!-- card 2-->
+          <div
+            class="w-45 card border border-black rounded-lg"
+            id="workshop-card"
+          >
+            <div class="card-body p-4 mt-5">
+              <h3 class="card-title font-bold">Come join our free workshops</h3>
+              <p>See our listing of when and where</p>
+              <div class="card-actions justify-end mt-5 mb-4"></div>
+            </div>
+          </div>
+
+          <!--card 3-->
+          <div class="w-45 border border-black rounded" id="sales-card">
+            <div class="card-body p-4 mt-5">
+              <h3 class="card-title font-bold">List of gently used Bicycles</h3>
+              <p>Good bikes that need a new home</p>
+              <div class="card-actions justify-end mt-5 mb-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- carousel section to be wired later-->
+
+      <section aria-label="Repairs">
+        <div class="flex justify-center gap-10">
+          <div id="item1" class="h-full">
+            <img
+              src="flat tire.png"
+              class="h-full w-auto object-cover"
+              alt="Flat Tire"
+            />
+            <button
+              //class="bg-gray-300 p-1 mt-2 text-lg rounded text-amber-600 cursor-pointer hover:bg-green-800"
+              id="flat-tire-btn"
+            >
+              How to fix a flat
+            </button>
+          </div>
+          <div id="item2" class="mt-9">
+            <img
+              src="Brake adjustment.png"
+              class="w-auto object-cover"
+              alt="Fix Brakes"
+            />
+            <button
+              class="bg-gray-300 p-1 mt-2 rounded text-amber-600 text-lg cursor-pointer"
+              id="brakes-btn"
+            >
+              Brake Adjustments made Easy
+            </button>
+          </div>
+          <div id="item3">
+            <img
+              src="chain maintain.png"
+              class="h-full w-auto object-cover"
+              alt="Chain Maintain"
+            />
+            <button
+              class="bg-gray-300 p-1 mt-2 rounded text-amber-600 text-lg cursor-pointer"
+              id="chain-btn"
+            >
+              Maintain Your Chain
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--workshop section populated by for loop-->
+
+      <div class="flex justify-center mt-10 mb-6 p-4">
+        <div
+          id="workshops"
+          class="flex gap-4 p-4 bg-green-800 text-white text-lg text-center rounded"
+        ></div>
+      </div>
+
+      <div id="chatHistory" class="text-black ml-10 border border-black"></div>
+      <section class="flex justify-center mt-6">
+        <p class="ml-4 text-black text-lg underline">
+          Lets chat about bicycles
+        </p>
+        <input
+          class="w-1/4 py-3 ml-4 text-center text-white text-lg bg-green-800"
+          type="text"
+          name="#userInput"
+          id="userInput"
+          placeholder="type message here"
+          aria
+          aria-label="type message here"
+        />
+        <button
+          type="button"
+          class="bg-green-800 text-lg text-white bg-gray-800 rounded ml-4 px-6"
+          id="send"
+        >
+          send message
+        </button>
+      </section>
+
+      <!--form to be wired later-->
+
+      <div class="flex justify-between mt-15 mb-15 gap-6">
+        <section class="text-center rounded p-4">
+          <div class="shadow-lg ring-2 rounded p-6" id="tracker">
+            <h3 class="text-lg font-bold text-center mb-4">
+              Bicycle Maintenance Tracker
+            </h3>
+            <form action="">
+              <div class="mb-4">
+                <label for="maintenance-date" class="mb-2">
+                  Date:
+                  <input
+                    type="date"
+                    id="maintenance-date"
+                    class="mt-1 w-full border border-gray-300 rounded p-2"
+                    required
+                  />
+                </label>
+                <label for="maintenance-performed" class="mb-2">
+                  Maintenance Performed:
+                  <input
+                    type="text"
+                    id="maintenance-performed"
+                    class="mt-1 block w-full border border-gray-300 rounded p-2"
+                    required
+                  />
+                </label>
+                <label for="next-maintenance" class="mb-2">
+                  Next Maintenance Due:
+                  <input
+                    type="date"
+                    id="next-maintenance"
+                    class="mt-1 block w-full border border-gray-300 rounded p-2"
+                    required
+                  />
+                </label>
+              </div>
+              <div class="flex justify-between">
+                <button
+                  type="button"
+                  class="bg-gray-800 text-white px-4 py-2 rounded"
+                  id="previous-btn"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="bg-gray-800 text-white px-4 py-2 rounded"
+                  id="next-btn"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- sale or trade section-->
+        <section
+          class=" flex w-1/3  text-white items-center"
+        >
+          <h3
+            class="text-lg font-bold text-center  mb-4""><span
+              >For Sale or Trade: Contact via email for any interest @
+              bikestogoodhomes@www.com</span>
+          </h3></section>
+          <div id="sell-trade"></div>
+        
+        
+      </div>
+
+      <!-- flat tire fix-->
+
+      <section class="flex justify-center gap-10 ">
+        <div
+          class="flex w-1/4 items-center border-black ring-2 rounded bg-yellow-600"
+          id="flat-tire"
+        >
+          <h2 class="text-lg font-bold text-black p-4">
+            How to Fix a Flat Tire
+          </h2>
+          <ul class="list-disc flex flex-col text-white">
+            <li>Deflate the tire completely</li>
+            <li>Remove the wheel from the bicycle</li>
+            <li>Use tire levers to detach the tire from the rim</li>
+            <li>Remove the inner tube</li>
+            <li>Patch or replace the tube</li>
+            <li>Reinstall the tube and tire</li>
+            <li>Inflate the tire</li>
+          </ul>
+        </div>
+
+        <!-- brake adjust-->
+
+        <div
+          class="w-1/4 items-center border  ring-2 rounded bg-yellow-600 p-2"
+          id="brake-adjust"
+        >
+          <h2 class="text-lg font-bold text-black px-4">
+            Adjust Your Own Brakes
+          </h2>
+          <ul class="list-disc text-white pl-6 mt-4 flex flex-col">
+            <li class="list-none underline font-bold">
+              Adjust Brake Cable Tension:
+            </li>
+
+            <li>Locate the cable connecting the brake lever to the caliper</li>
+            <li>Loosen the bolt holding the cable</li>
+            <li>Pull the cable tighter or loosen it as needed</li>
+            <li>Retighten the bolt and test the brake lever feel</li>
+
+            <li class="list-none underline font-bold">Brake Pads:</li>
+            <li>Check Brake Pads inspect for wear and replace if necessary</li>
+            <li>Squeeze the brake lever to bring pads close to the rim</li>
+            <li>Adjust pad position for even spacing on both sides</li>
+            <li>Release and check alignment</li>
+
+            <li>
+              Test the Brakes: Squeeze the lever to ensure smooth engagement
+              without rim rubbing
+            </li>
+            <li>
+              Fine-Tune as Necessary: Repeat adjustments until you achieve
+              desired performance
+            </li>
+          </ul>
+        </div>
+
+        <!-- chain maintain-->
+
+        <div
+          class="w-1/4  border  ring-2 rounded bg-yellow-600 p-4"
+          id="chain-maintain"
+        >
+          <h2 class="text-lg font-bold text-black text-center p-2">
+            Maintain the Chain
+          </h2>
+          <p><span class="step-title text-white font-bold">Cleaning:</span></p>
+          <ul class="list-disc pl-5 flex flex-col space-y-1">
+            <li>
+              <span class="step-title">Frequency:</span> Clean regularly,
+              especially after wet or muddy rides
+            </li>
+            <li>
+              <span class="step-title font-bold">Methods:</span>
+              <ul>
+                <li>
+                  <strong>On-bike cleaning:</strong> Use a brush or chain
+                  cleaner tool while the chain is on the bike
+                </li>
+                <li>
+                  <strong>Off-bike cleaning:</strong> Remove the chain and soak
+                  in soapy water or degreaser
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="step-title font-bold">Rinse:</span> Thoroughly rinse with water
+              to remove cleaning solution residue
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div></div>
+      <section class="flex justify-center text-black text-lg mb-4 mt-3">
+        <a aria-current="page" href="index.html">Back to Top</a>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+
+  <footer class="flex bg-green-800 text-white justify-around">
+    <p>copywrite@ellewood 2025</p>
+    <p>
+      Thank you for visiting our site.
+      <span>Let your neighbors know about us. </span>
+    </p>
+  </footer>
+</html>
